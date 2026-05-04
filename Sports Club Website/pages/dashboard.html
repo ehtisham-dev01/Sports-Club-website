@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Club - Dashboard</title>
+    <link rel="stylesheet" href="../cssFile/globalStyles.css">
+</head>
+<body>
+    <nav>
+        <a href="../index.html">
+            <span>⚽ Sports Club</span>
+        </a>
+        <button class="menu-toggle">&#9776;</button>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html" class="link-button">Logout</a></li>
+        </ul>
+    </nav>
+
+    <main class="page">
+        <h2>Dashboard Overview</h2>
+        <p>Welcome back! Here is your upcoming schedule and recent activity.</p>
+        
+        <div class="table-container">
+            <!-- Inline CSS used for min and max width as per requirements -->
+            <table style="min-width: 600px; max-width: 1000px; margin: 0 auto;">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Activity / Match</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Oct 25, 2026</td>
+                        <td>Tennis Coaching</td>
+                        <td>10:00 AM</td>
+                        <td>Confirmed</td>
+                    </tr>
+                    <tr>
+                        <td>Oct 26, 2026</td>
+                        <td>Gym Access</td>
+                        <td>06:00 AM</td>
+                        <td>Confirmed</td>
+                    </tr>
+                    <tr>
+                        <td>Oct 28, 2026</td>
+                        <td>Friendly Soccer Match</td>
+                        <td>04:00 PM</td>
+                        <td>Pending</td>
+                    </tr>
+                    <tr>
+                        <td>Nov 01, 2026</td>
+                        <td>Swimming Competition</td>
+                        <td>09:00 AM</td>
+                        <td>Registered</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div>
+                <h1>Sports Club</h1>
+            </div>
+            <div>
+                <h2>Quick Links</h2>
+                <a href="../index.html">Home</a>
+                <a href="services.html">Services</a>
+            </div>
+        </div>
+        <p>&copy; 2026 Sports Club. All rights reserved.</p>
+    </footer>
+
+    <script src="../jsFile/jsFunctions.js"></script>
+</body>
+</html>

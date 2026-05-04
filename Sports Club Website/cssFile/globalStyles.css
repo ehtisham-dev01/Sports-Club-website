@@ -1,0 +1,596 @@
+/* =========================================================
+   DESIGN SYSTEM
+========================================================= */
+:root {
+  --brand-primary-color: #2E7D32; /* Deep Green */
+  --brand-secondary-color: #F9A826; /* Vibrant Orange */
+  --brand-third-color: #1565C0; /* Strong Blue */
+  --brand-fourth-color: #C62828; /* Deep Red */
+  --brand-accent-color: #FFD54F; /* Accent Yellow */
+
+  --bg-main: #F4F7F6;
+  --bg-card: #FFFFFF;
+
+  --text-primary-color: #2C3E50;
+  --text-secondary-color: #546E7A;
+  --text-muted-color: #90A4AE;
+  --text-focus-color: #2E7D32;
+  --text-highlighted-color: #F9A826;
+
+  --border-primary-color: #CFD8DC;
+  --border-secondary-color: #ECEFF1;
+  --border-muted-color: #F5F7F8;
+  --border-focus-color: #2E7D32;
+  --border-highlighted-color: #F9A826;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+
+  --transition: 0.3s ease-in-out;
+}
+
+/* =========================================================
+   DARK MODE (OPTIONAL)
+========================================================= */
+[data-theme="dark"] {
+  --bg-main: #121212;
+  --bg-card: #1E1E1E;
+
+  --text-primary-color: #E0E0E0;
+  --text-secondary-color: #B0BEC5;
+  --text-muted-color: #78909C;
+  --text-focus-color: #81C784;
+  --text-highlighted-color: #FFCA28;
+
+  --border-primary-color: #37474F;
+  --border-secondary-color: #263238;
+  --border-muted-color: #1C2331;
+  --border-focus-color: #81C784;
+  --border-highlighted-color: #FFCA28;
+}
+
+/* =========================================================
+   GLOBAL BASE
+========================================================= */
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg-main);
+  color: var(--text-primary-color);
+  line-height: 1.6;
+}
+
+/* =========================================================
+   GLOBAL BUTTON SYSTEM
+========================================================= */
+button { 
+   cursor: pointer;
+   background: var(--brand-primary-color);
+   color: #fff;
+   border: none;
+   padding: 10px 20px;
+   border-radius: var(--radius-sm);
+   font-weight: 600;
+   transition: background var(--transition), transform var(--transition);
+}
+
+button:hover { 
+  background: var(--brand-third-color);
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   LINK BUTTON
+========================================================= */
+.link-button { 
+  display: inline-block;
+  text-decoration: none;
+  background: var(--brand-secondary-color);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  text-align: center;
+}
+
+.link-button:hover {
+  background: var(--brand-accent-color);
+  color: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* =========================================================
+   Button Sizes
+========================================================= */
+button.lg-button {
+  padding: 14px 28px;
+  font-size: 1.1rem;
+}
+button.sm-button {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+}
+button.tiny-button {
+  padding: 4px 8px;
+  font-size: 0.8rem;
+}
+button.border-button {
+  background: transparent;
+  border: 2px solid var(--brand-primary-color);
+  color: var(--brand-primary-color);
+}
+button.border-button:hover {
+  background: var(--brand-primary-color);
+  color: #fff;
+}
+
+/* =========================================================
+  SELECT input used in forms
+========================================================= */
+select {
+    padding: 10px;
+    border: 1px solid var(--border-primary-color);
+    border-radius: var(--radius-sm);
+    background: var(--bg-card);
+    color: var(--text-primary-color);
+    font-size: 1rem;
+    width: 100%;
+    outline: none;
+    transition: border var(--transition);
+}
+
+select:hover {
+    border-color: var(--border-highlighted-color);
+}
+
+select:focus {
+    border-color: var(--border-focus-color);
+    box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
+}
+
+select:disabled {
+    background: var(--border-secondary-color);
+    cursor: not-allowed;
+}
+
+.select-container {
+    margin-bottom: 15px;
+}
+
+/* =========================================================
+  NAV BUTTON
+========================================================= */
+nav button { 
+    background: transparent;
+    color: var(--text-primary-color);
+    border: 2px solid var(--border-primary-color);
+}
+
+nav button:hover { 
+    background: var(--bg-card);
+    color: var(--brand-primary-color);
+    border-color: var(--brand-primary-color);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-primary-color);
+  font-weight: 500;
+  transition: color var(--transition);
+}
+nav a:hover {
+  color: var(--brand-primary-color);
+}
+
+h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+h2 { font-size: 2rem; margin-bottom: 0.8rem; }
+h3 { font-size: 1.5rem; margin-bottom: 0.6rem; }
+h4 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+
+p { margin-bottom: 1rem; color: var(--text-secondary-color); }
+
+/* =========================================================
+   NAVBAR (RESPONSIVE + ROLE READY)
+========================================================= */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  background: var(--bg-card);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+nav > a {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--brand-primary-color);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Menu list */
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+  align-items: center;
+}
+
+nav li {
+  position: relative;
+}
+
+/* Dropdown */
+nav .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--bg-card);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: var(--radius-sm);
+  min-width: 150px;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+nav .dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+nav .dropdown-menu a {
+  padding: 8px 15px;
+  display: block;
+}
+
+nav .dropdown-menu a:hover {
+  background: var(--bg-main);
+}
+
+/* =========================================================
+   HAMBURGER BUTTON in navbar
+========================================================= */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-primary-color);
+}
+
+/* =========================================================
+   MOBILE NAVBAR
+========================================================= */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--bg-card);
+    padding: 20px 0;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  }
+
+  nav ul.open {
+    display: flex;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 10px;
+  }
+
+  nav .dropdown:hover .dropdown-menu {
+    display: none;
+  }
+
+  nav .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    background: var(--bg-main);
+  }
+  
+  nav .dropdown.open .dropdown-menu {
+      display: flex;
+  }
+}
+
+/* =========================================================
+   PAGE CONTENT
+========================================================= */
+.page {
+  padding: 40px 5%;
+  min-height: calc(100vh - 200px);
+}
+
+header {
+    background: linear-gradient(135deg, var(--brand-primary-color), var(--brand-third-color));
+    color: white;
+    padding: 80px 5%;
+    text-align: center;
+    border-radius: var(--radius-md);
+    margin: 20px 5%;
+}
+header h1 { color: white; }
+header p { color: rgba(255,255,255,0.9); font-size: 1.2rem; }
+
+/* =========================================================
+   CARD SYSTEM
+========================================================= */
+.card-container {
+  display: flex;              
+  flex-wrap: wrap;            
+  justify-content: center;    
+  gap: 30px;              
+  margin: 36px 12px;
+}
+
+.card {
+  display: flex;             
+  flex-direction: column;      
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+  width: 300px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  background-color: var(--border-secondary-color);
+}
+
+.card > div {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card a {
+  background: none;
+  color: var(--brand-secondary-color);
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: auto;
+  align-self: flex-start;
+  transition: color var(--transition);
+}
+
+.card a:hover {
+  background: none;
+  color: var(--brand-primary-color);
+}
+
+/* =========================================================
+   FORM SYSTEM
+========================================================= */
+.form-container {
+  background: var(--bg-card);
+  padding: 30px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form div {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-primary-color);
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-primary-color);
+  border-radius: var(--radius-sm);
+  background: var(--bg-main);
+  color: var(--text-primary-color);
+  box-sizing: border-box;
+  outline: none;
+  transition: border var(--transition);
+}
+
+input:focus {
+ border-color: var(--border-focus-color);
+ box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
+}
+
+form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-primary-color);
+  border-radius: var(--radius-sm);
+  background: var(--bg-main);
+  color: var(--text-primary-color);
+  box-sizing: border-box;
+  outline: none;
+  transition: border var(--transition);
+  resize: vertical;
+  min-height: 100px;
+}
+
+form textarea:focus {
+  border-color: var(--border-focus-color);
+  box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
+}
+
+/* =========================================================
+   TABLE SYSTEM
+========================================================= */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  background: var(--bg-card);
+}
+
+table thead {
+  background: var(--brand-primary-color);
+  color: white;
+}
+
+table th {
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+}
+
+table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--border-secondary-color);
+  color: var(--text-secondary-color);
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: var(--bg-card);
+}
+table tbody tr:nth-child(even) {
+  background-color: var(--bg-main);
+}
+
+table tbody tr:hover {
+  background-color: rgba(46, 125, 50, 0.05);
+}
+
+table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table-compact th,
+.table-compact td {
+ padding: 8px 10px;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid var(--border-secondary-color);
+}
+
+.table-striped tbody tr:nth-child(even) {
+  background-color: var(--border-muted-color);
+}
+
+td {
+  vertical-align: middle;
+}
+
+.table-empty {
+  text-align: center;
+  padding: 30px;
+  color: var(--text-muted-color);
+  font-style: italic;
+}
+
+.table-row-selected {
+  background-color: rgba(249, 168, 38, 0.1) !important;
+}
+
+/* =========================================================
+   FOOTER SYSTEM
+========================================================= */
+footer {
+ background: var(--bg-card);
+ border-top: 1px solid var(--border-primary-color);
+ padding: 40px 5% 20px;
+ margin-top: 40px;
+}
+
+.footer-container {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 30px;
+ justify-content: space-between;
+}
+
+.footer-container > div {
+  flex: 1;
+  min-width: 250px;
+}
+
+footer a {
+ color: var(--text-secondary-color);
+ text-decoration: none;
+ display: block;
+ margin-bottom: 8px;
+ transition: color var(--transition);
+}
+
+footer a:hover {
+  color: var(--brand-primary-color);
+}
+
+footer p {
+  color: var(--text-muted-color);
+  margin-top: 20px;
+  text-align: center;
+  border-top: 1px solid var(--border-secondary-color);
+  padding-top: 20px;
+}
+
+footer h1 {
+  font-size: 1.5rem;
+  color: var(--brand-primary-color);
+  margin-top: 0;
+}
+
+footer h2 {
+  font-size: 1.2rem;
+  color: var(--text-primary-color);
+}
+
+/* Utility to center main content easily without violating rules */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main > * {
+    width: 100%;
+    max-width: 1200px;
+}
