@@ -1,13 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sports Club - Dashboard</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="../cssFile/globalStyles.css">
 </head>
 <body>
-    <nav>
+<nav>
         <a href="../index.html">
             <span>⚽ Sports Club</span>
         </a>
@@ -18,68 +19,76 @@
             <li><a href="dashboard.html">Dashboard</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="login.html" class="link-button">Logout</a></li>
+            <li><a href="register.html">Register</a></li>
         </ul>
     </nav>
+    <div class="dashboard">
 
-    <main class="page">
-        <h2>Dashboard Overview</h2>
-        <p>Welcome back! Here is your upcoming schedule and recent activity.</p>
+        <h1>Sports Club Dashboard</h1>
+        <p>Manage all stock records and e-commerce activities from one place.</p>
+
+        <div class="cards">
+
+            <div>
+                <h3>View All Stock</h3>
+                <p>Check complete stock records.</p>
+                <button>Open</button>
+            </div>
+
+            <div>
+                <h3>Insert New Stock</h3>
+                <p>Add new products and sports items.</p>
+                <button>Add</button>
+            </div>
+
+            <div>
+                <h3>Update Stock</h3>
+                <p>Edit available stock information.</p>
+                <button>Update</button>
+            </div>
+
+            <div>
+                <h3>Delete Stock</h3>
+                <p>Remove old or unavailable products.</p>
+                <button>Delete</button>
+            </div>
+
+            <div>
+                <h3>Cart View</h3>
+                <p>View products added to cart.</p>
+                <button>Cart</button>
+            </div>
+
+            <div>
+                <h3>Search By Category</h3>
+                <p>Search football, cricket, gym and more.</p>
+                <button>Search</button>
+            </div>
+
+            <div>
+                <h3>Search By Price</h3>
+                <p>Find products according to budget.</p>
+                <button>Price</button>
+            </div>
+
+            <div>
+                <h3>Extra Options</h3>
+                <p>Reports, settings and customer records.</p>
+                <button>More</button>
+            </div>
+
+        </div>
+
+        <h2>Graphical View of Stock Database</h2>
+
+        <img src="sources/dashboard-chart.png" alt="Stock Graph" width="600">
+
+        <h2>Quick Links</h2>
+
         
-        <div class="table-container">
-            <!-- Inline CSS used for min and max width as per requirements -->
-            <table style="min-width: 600px; max-width: 1000px; margin: 0 auto;">
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Activity / Match</th>
-                        <th>Time</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Oct 25, 2026</td>
-                        <td>Tennis Coaching</td>
-                        <td>10:00 AM</td>
-                        <td>Confirmed</td>
-                    </tr>
-                    <tr>
-                        <td>Oct 26, 2026</td>
-                        <td>Gym Access</td>
-                        <td>06:00 AM</td>
-                        <td>Confirmed</td>
-                    </tr>
-                    <tr>
-                        <td>Oct 28, 2026</td>
-                        <td>Friendly Soccer Match</td>
-                        <td>04:00 PM</td>
-                        <td>Pending</td>
-                    </tr>
-                    <tr>
-                        <td>Nov 01, 2026</td>
-                        <td>Swimming Competition</td>
-                        <td>09:00 AM</td>
-                        <td>Registered</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </main>
 
-    <footer>
-        <div class="footer-container">
-            <div>
-                <h1>Sports Club</h1>
-            </div>
-            <div>
-                <h2>Quick Links</h2>
-                <a href="../index.html">Home</a>
-                <a href="services.html">Services</a>
-            </div>
-        </div>
-        <p>&copy; 2026 Sports Club. All rights reserved.</p>
-    </footer>
-
-    <script src="../jsFile/jsFunctions.js"></script>
+    </div>
+    
+<script src="../jsFile/jsFunctions.js"></script>
 </body>
 </html>
